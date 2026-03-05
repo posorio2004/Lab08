@@ -1,4 +1,5 @@
 package com.example.lab08;
+import org.jetbrains.annotations.TestOnly;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 public class CustomListTest {
@@ -19,6 +20,16 @@ public class CustomListTest {
         list.addCity(calgary);
         list.deleteCity(calgary);
         assertFalse(list.hasCity(calgary);
+    }
+
+    @Test
+    public void countCities(){
+        CustomList list = new CustomList();
+        City calgary = new City("Calgary", "AB");
+        City toronto = new City("Toronto", "ON");
+        list.addCity(calgary);
+        list.addCity(toronto);
+        assertEquals(2, list.countCities());
     }
 }
 
